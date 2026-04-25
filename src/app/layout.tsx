@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-import { Header } from "@/components/layout/header";
 
 const montserrat = Montserrat({
   subsets: ["latin", "vietnamese"],
@@ -25,8 +24,8 @@ export default function RootLayout({
       lang="vi"
       className={`${montserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
-        <Header />
+      <body className="min-h-full flex flex-col text-foreground">
+
         {children}
       </body>
     </html>
