@@ -1,0 +1,238 @@
+/* ===== Admin Sidebar Styles ===== */
+
+.admin-sidebar {
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  border-right: 1px solid #f0f0f0 !important;
+  background: #ffffff !important;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ---- Header ---- */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  min-height: 56px;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.logo-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+}
+
+.collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  background: #ffffff;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.collapse-btn:hover {
+  background: #fafafa;
+  border-color: #d9d9d9;
+  color: #333;
+}
+
+/* ---- Menu Wrapper ---- */
+.sidebar-menu-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+/* Custom scrollbar */
+.sidebar-menu-wrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-menu-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-menu-wrapper::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 4px;
+}
+
+.sidebar-menu-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* ---- Ant Design Menu Overrides ---- */
+.sidebar-menu.ant-menu {
+  border-inline-end: none !important;
+  background: transparent;
+}
+
+.sidebar-menu .ant-menu-item {
+  margin: 2px 8px !important;
+  padding-left: 16px !important;
+  border-radius: 8px !important;
+  height: 50px !important;
+  line-height: 40px !important;
+  color: #4a4a4a !important;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar-menu .ant-menu-item .ant-menu-item-icon,
+.sidebar-menu .ant-menu-item .anticon {
+  font-size: 16px !important;
+  color: #8c8c8c;
+  transition: color 0.2s ease;
+}
+
+.sidebar-menu .ant-menu-item:hover {
+  background: #fff7f0 !important;
+  color: #f5851e !important;
+}
+
+.sidebar-menu .ant-menu-item:hover .ant-menu-item-icon,
+.sidebar-menu .ant-menu-item:hover .anticon {
+  color: #f5851e !important;
+}
+
+/* Active / Selected item — orange theme matching the image */
+.sidebar-menu .ant-menu-item.ant-menu-item-selected {
+  background: #fff3e6 !important;
+  color: #f5851e !important;
+  font-weight: 600;
+}
+
+.sidebar-menu .ant-menu-item.ant-menu-item-selected .ant-menu-item-icon,
+.sidebar-menu .ant-menu-item.ant-menu-item-selected .anticon {
+  color: #f5851e !important;
+}
+
+/* ---- Footer / User Section ---- */
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+  gap: 8px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.user-avatar {
+  flex-shrink: 0;
+  border: 2px solid #f0f0f0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.user-name {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #1a1a1a !important;
+  line-height: 1.3 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-email {
+  font-size: 11.5px !important;
+  color: #999 !important;
+  line-height: 1.3 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.logout-btn:hover {
+  background: #fff1f0;
+  color: #ff4d4f;
+}
+
+/* ---- Collapsed State Adjustments ---- */
+.admin-sidebar.ant-layout-sider-collapsed .sidebar-header {
+  justify-content: center;
+  padding: 16px 8px 12px;
+}
+
+.admin-sidebar.ant-layout-sider-collapsed .sidebar-menu .ant-menu-item {
+  margin: 2px 8px !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-sidebar.ant-layout-sider-collapsed .sidebar-footer {
+  flex-direction: column;
+  padding: 12px 8px;
+  gap: 0;
+}
+
+.admin-sidebar.ant-layout-sider-collapsed .user-info {
+  justify-content: center;
+}
+
+/* ---- Transition ---- */
+.admin-sidebar .ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

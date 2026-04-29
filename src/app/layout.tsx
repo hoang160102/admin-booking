@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
+import { AntdProvider } from "@/components/providers/antd-provider";
 
 const montserrat = Montserrat({
   subsets: ["latin", "vietnamese"],
@@ -10,8 +11,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "NCC - Trung tâm Chiếu phim Quốc gia",
-  description: "Trang web chính thức của Trung tâm Chiếu phim Quốc gia Việt Nam",
+  title: "管理パネル - 塾講師コネクト",
+  description: "塾講師コネクト管理パネル",
 };
 
 export default function RootLayout({
@@ -21,12 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="vi"
+      lang="ja"
       className={`${montserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col text-foreground">
-
-        {children}
+      <body className="min-h-full flex bg-background text-foreground">
+        <AntdProvider>
+          {children}
+        </AntdProvider>
       </body>
     </html>
   );
