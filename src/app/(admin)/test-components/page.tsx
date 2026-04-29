@@ -13,8 +13,15 @@ import {
   Layout,
   MousePointer2,
   Bell,
-  Search
+  Search,
+  CheckCircle2,
+  CircleDot,
+  Type
 } from "lucide-react"
+
+import { Input as AntdInput } from "@/components/ui/antd/input"
+import { Checkbox as AntdCheckbox } from "@/components/ui/antd/checkbox"
+import { Radio as AntdRadio, RadioGroup as AntdRadioGroup } from "@/components/ui/antd/radio"
 
 import {
   Carousel,
@@ -306,6 +313,61 @@ export default function TestComponentsPage() {
               </div>
             </section>
           </div>
+
+          <Separator />
+
+          {/* Ant Design Section */}
+          <section className="flex flex-col gap-8 pb-20">
+            <h2 className="text-2xl font-bold flex items-center gap-2">
+              <Type className="size-6 text-primary" /> Ant Design Components (Wrapped)
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Input Section */}
+              <Card className="border-none bg-muted/20">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Type className="size-4" /> Input
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <AntdInput label="Họ và tên" placeholder="Nhập họ và tên..." />
+                  <AntdInput label="Email" placeholder="email@example.com" prefix={<Search className="size-4 opacity-50" />} />
+                  <AntdInput label="Số điện thoại" placeholder="0123 456 789" error="Số điện thoại không hợp lệ" />
+                </CardContent>
+              </Card>
+
+              {/* Checkbox Section */}
+              <Card className="border-none bg-muted/20">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <CheckCircle2 className="size-4" /> Checkbox
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <AntdCheckbox label="Ghi nhớ đăng nhập" />
+                  <AntdCheckbox label="Chấp nhận điều khoản" defaultChecked />
+                  <AntdCheckbox disabled label="Tùy chọn bị vô hiệu hóa" />
+                </CardContent>
+              </Card>
+
+              {/* Radio Section */}
+              <Card className="border-none bg-muted/20">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <CircleDot className="size-4" /> Radio Group
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <AntdRadioGroup defaultValue={1} className="flex flex-col gap-3">
+                    <AntdRadio value={1} label="Nam" />
+                    <AntdRadio value={2} label="Nữ" />
+                    <AntdRadio value={3} label="Khác" />
+                  </AntdRadioGroup>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
         </main>
       </div>
     </TooltipProvider>
